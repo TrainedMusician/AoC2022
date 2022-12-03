@@ -1,5 +1,4 @@
-def read_file(file_path):
-    return open(file_path).read().split('\n')
+from master import read_file
 
 
 def find_max(inventory, maximum=0):
