@@ -46,3 +46,10 @@ if __name__ == '__main__':
         if sizes[directory] < 100000:
             semi_total += sizes[directory]
     print(semi_total)
+
+    candidates = {}
+    min_size = 30_000_000 - (70_000_000 - sizes['/'])
+    for directory in sizes:
+        if sizes[directory] > min_size:
+            candidates[directory] = sizes[directory]
+    print(min(candidates.values()))
