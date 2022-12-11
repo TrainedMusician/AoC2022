@@ -26,12 +26,12 @@ def find_sizes(content):
             if line[5:] == '..':
                 # move one back
                 current_dir = '/'.join(current_dir[:-1].split('/')[:-1])
-                if current_dir == '':
-                    current_dir = '/'
             elif line[5:] == '/':
-                current_dir += '/'
+                # only at the start
+                pass
             else:
-                current_dir += line[5:] + '/'
+                current_dir += line[5:]
+            current_dir += '/'
         elif line[:4] == '$ ls':
             # list sizes
             list_sizes = True
